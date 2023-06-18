@@ -21,9 +21,13 @@
             </button>
             <button
                 mat-button
-                color="primary"
+                (click)="openSummary(
+                movie.Title,
+                movie.Description
+                )"
+                color="basic"
             >
-                Synopsis
+                Summary
             </button>
             <button 
                 *ngIf="!isFavorite(movie._id)" 
