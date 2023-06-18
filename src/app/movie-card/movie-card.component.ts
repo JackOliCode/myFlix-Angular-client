@@ -3,7 +3,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
-
+import { GenreDetailsComponent } from '../genre-details/genre-details.component';
+import { DirectorDetailsComponent } from '../director-details/director-details.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -68,13 +69,10 @@ export class MovieCardComponent implements OnInit {
   });
 }
 
-/**
- * Open the Genre dialog modal diplaying the movie genre info
- * @param name
- * @param description
- *
+//genre component 
+
 openGenre(name: string, description: string): void {
-  this.dialog.open(GenreComponent, {
+  this.dialog.open(GenreDetailsComponent, {
     data: {
       Name: name,
       Description: description,
@@ -83,14 +81,10 @@ openGenre(name: string, description: string): void {
   });
 }
 
-**
- * Open the Director dialog modal displaying the movie director info
- * @param name
- * @param bio 
- * @param birthday
- *
+// director component //
+
 openDirector(name: string, bio: string, birthday: string): void {
-  this.dialog.open(DirectorComponent, {
+  this.dialog.open(DirectorDetailsComponent, {
     data: {
       Name: name,
       Bio: bio,
@@ -98,5 +92,6 @@ openDirector(name: string, bio: string, birthday: string): void {
     },
     width: '25rem',
   });
-}*/
+}
+
 }
