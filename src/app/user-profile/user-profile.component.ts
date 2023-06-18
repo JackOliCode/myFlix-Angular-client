@@ -25,7 +25,6 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    //public dialogRef: MatDialogRef<UserProfileComponent>,
     public snackBar: MatSnackBar,
     private router: Router
     ) { }
@@ -65,4 +64,21 @@ export class UserProfileComponent implements OnInit {
         this.getUser();
       }, 1000); // added 1ms delay as code async
     }
-}
+
+    deleteUser(): void {
+      this.fetchApiData.deleteUser().subscribe((result) => {
+        localStorage.clear();
+        this.router.navigate(['welcome']);
+        this.snackBar.open('User successfully deleted', 'OK', {
+          duration: 2000
+        });
+      }, (result) => {
+        this.snackBar.open(result, 'OK', {
+          duration: 2000
+        });
+      });
+    }
+
+
+  }
+
