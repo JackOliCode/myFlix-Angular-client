@@ -40,8 +40,29 @@ export class UserProfileComponent implements OnInit {
         this.user = user;
         this.userData.Username = user.Username;
         this.userData.Email = user.Email;
-        this.userData.Birthday = formatDate(user.Birthday, 'dd-mm-yyyy', 'en-GB', 'GMT'); // this isn't working
+        this.userData.Birthday = user.Birthday;
       });
     }
 
+    editUser(): void {
+      this.fetchApiData.editUser(this.userData).subscribe((result) => {
+        console.log('User:', result);
+        localStorage.setItem('username', result.Username);
+        this.snackBar.open('User successfully updated', 'OK', {
+          duration: 2000
+        });
+      }, (error) => {
+        const errorMessage = error.message || 'An error occurred.';
+        this.snackBar.open(errorMessage, 'OK', {
+          duration: 2000
+        });
+      });
+    }
+
+    updateUser(): void {
+      this.editUser();
+      setTimeout(() => {
+        this.getUser();
+      }, 1000); // added 1ms delay as code async
+    }
 }
