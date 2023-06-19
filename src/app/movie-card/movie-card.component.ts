@@ -28,11 +28,9 @@ export class MovieCardComponent implements OnInit {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      this.fetchApiData.getUser().subscribe((userResp: any) => {
-        this.favoriteMovies = userResp.FavoriteMovies;
-        console.log(this.movies);
+      console.log(this.movies);
       });
-    });
+    
   }
 
   // fave movie logic starts here //

@@ -1,0 +1,33 @@
+.nav-bar {
+    width: 60%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 20%;
+    background-color: darkblue;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .nav-title {
+    color: gold;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .nav-button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    border-radius: 20px;
+    background-color: gold;
+    color: black;
+    margin: 0 5px;
+  }
+  
+ 
+  
