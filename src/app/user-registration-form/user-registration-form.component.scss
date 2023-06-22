@@ -1,0 +1,19 @@
+.login-btn {
+    border-radius: 20px;
+    background-color: gold !important;
+    color: black;
+    margin: 0 5px;
+}
+
+.mat-mdc-button:not(:disabled) {
+    color: gold;
+  }
+
+.mat-mdc-card-header {
+    margin: 5%;
+
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color: transparent !important;
+  }

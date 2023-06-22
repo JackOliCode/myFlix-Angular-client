@@ -1,5 +1,5 @@
-<app-nav-bar></app-nav-bar>
-<div style="display: flex;">
+<div><app-nav-bar></app-nav-bar></div>
+<div style="display: flex;" class="movies-view">
     <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
         <mat-card-header>
         <mat-card-title>{{movie.Title}}</mat-card-title>
@@ -25,7 +25,7 @@
                     movie.Director.Bio,
                     movie.Director.Birth
                 )"
-                color="basic"
+                class="button-text"
             >
                 Director
             </button>

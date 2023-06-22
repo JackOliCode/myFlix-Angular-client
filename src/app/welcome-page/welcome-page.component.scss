@@ -12,13 +12,21 @@
     flex-direction: row;
 }
   
-  .card_body {
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
+ 
+  .login-btn {
+    border-radius: 20px;
+    color: black;
+    margin: 0 5px;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: gold;
+}
+
+.mat-mdc-dialog-container {
+  background-color: transparent;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: transparent !important;
+}

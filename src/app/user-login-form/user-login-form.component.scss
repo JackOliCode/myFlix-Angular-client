@@ -1,0 +1,31 @@
+.login-btn {
+    border-radius: 20px;
+    background-color: gold !important;
+    color: black;
+    margin: 0 5px;
+}
+
+.mat-mdc-button:not(:disabled) {
+    color: gold;
+  }
+
+  .mat-mdc-card-header {
+    margin: 5%;
+}
+
+.mat-mdc-card {
+    background: rgb(0 126 255 / 37%);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.mat-mdc-dialog-container {
+    background-color: transparent;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color: transparent !important;
+  }

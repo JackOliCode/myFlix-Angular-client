@@ -1,10 +1,15 @@
 .nav-bar {
     width: 60%;
     height: 100px;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 20%;
-    background-color: darkblue;
+    background: rgb(0 126 255 / 37%);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     align-items: center;
     justify-content: center;
     z-index: 9999;

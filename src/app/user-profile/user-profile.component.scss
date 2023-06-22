@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .update-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.user-page {
+    margin: 0 auto;
+    width: 60%;
+  
+}
+  
+.user-details-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0;
+}

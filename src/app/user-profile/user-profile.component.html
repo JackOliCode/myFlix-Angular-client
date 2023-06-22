@@ -1,15 +1,16 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="user-page">
-
-    <h1>Profile</h1>
-    <p>Username: {{user.Username}}</p>
-    <p>Email: {{user.Email}}</p>
-    <p>Birthday: {{user.Birthday}}</p>
-
-
-    <h2>Update Profile</h2>
-        <form>
+<div class="user-details-form">
+    <div class="user-details">
+        <h1>Profile</h1>
+        <p>Username: {{user.Username}}</p>
+        <p>Email: {{user.Email}}</p>
+        <p>Birthday: {{user.Birthday}}</p>
+    </div>
+    <div>
+    <h1>Update Profile</h1>
+        <form class="update-form">
             <mat-form-field>
                 <input 
                     matInput [(ngModel)]="userData.Username" 
@@ -44,6 +45,7 @@
                 >
               </mat-form-field>
         </form>
+    
         <button 
             mat-raised-button (click)="updateUser()" 
             color="primary"
@@ -56,7 +58,8 @@
         >
             Remove account permanently
         </button>
-
+    </div>
+    </div>
 
 
 </div>
