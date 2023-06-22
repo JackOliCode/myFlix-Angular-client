@@ -25,6 +25,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { GenreDetailsComponent } from './genre-details/genre-details.component';
 import { DirectorDetailsComponent } from './director-details/director-details.component';
+import { MatListModule } from '@angular/material/list';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -59,7 +60,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatIconModule  
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

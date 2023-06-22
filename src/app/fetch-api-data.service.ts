@@ -90,23 +90,6 @@ export class FetchApiDataService {
       catchError(this.handleError)
     );  
   }
-
-  /* Making the api call for the get favourite movies for a user endpoint
-  getFavoriteMovies(): Observable<any> {
-    const username = localStorage.getItem('username');
-    const token = localStorage.getItem('token');
-    return this.http.get(apiUrl + 'users/' + username, { headers: new HttpHeaders(
-        {
-          Authorization: 'Bearer ' + token,
-        })
-    }).pipe(
-      map(this.extractResponseData),
-      map((data) => data.FavoriteMovies),
-      catchError(this.handleError)
-    );
-  }*/
-
-  
   
 
   // Making the api call for the edit user endpoint

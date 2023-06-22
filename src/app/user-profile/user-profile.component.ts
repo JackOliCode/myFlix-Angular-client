@@ -19,7 +19,7 @@ import { formatDate } from '@angular/common';
 export class UserProfileComponent implements OnInit {
 
   user: any = {}; //defines user as an object
-  favouriteMovies: any[] = []; //defines FM as an empty array
+  favoriteMovies: any[] = []; //defines FM as an empty array
 
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
@@ -40,6 +40,10 @@ export class UserProfileComponent implements OnInit {
         this.userData.Username = user.Username;
         this.userData.Email = user.Email;
         this.userData.Birthday = user.Birthday;
+      
+        this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+          this.favoriteMovies = resp.filter((m: { _id: any; }) => this.user.FavoriteMovies.indexOf(m._id) >= 0);
+        });
       });
     }
 

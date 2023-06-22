@@ -60,6 +60,17 @@
         </button>
     </div>
     </div>
+<div class="favourite-movies">
+    <h1>Favourite Movies</h1>
+    <mat-list>
+        <mat-list-item *ngFor="let movie of favoriteMovies">
+          <img matListItemAvatar src="{{movie.ImageURL}}" />
+          <div matListItemTitle>{{movie.Title}}</div>
+          <div matListItemLine>{{movie.Director.Name}}</div>
+        </mat-list-item>
+      </mat-list>
 
+
+</div>
 
 </div>

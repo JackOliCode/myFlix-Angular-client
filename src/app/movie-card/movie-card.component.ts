@@ -23,6 +23,7 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
+
   }
 
   getMovies(): void {
