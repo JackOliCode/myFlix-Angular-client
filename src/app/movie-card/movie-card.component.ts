@@ -23,7 +23,7 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-
+    this.getFavoriteMovies();
   }
 
   getMovies(): void {
@@ -59,6 +59,12 @@ export class MovieCardComponent implements OnInit {
       this.ngOnInit();
     });
   }
+
+  getFavoriteMovies(): void {
+    this.fetchApiData.getOneUser().subscribe((user: any) => {
+    this.favoriteMovies = user.FaveMovies;
+    });
+    }
 
 
  //Movie Details dialog modal displaying the movie title and description//

@@ -2,6 +2,10 @@
     box-sizing: border-box;
   }
   
+  body {
+    min-height: 100vh;
+    margin: 0;}
+  
   .update-form {
     display: flex;
     flex-direction: column;
@@ -19,3 +23,25 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 0;
 }
+
+.update-btn {
+    border-radius: 20px;
+    background-color: gold;
+    color: black;
+    margin: 0 5px;
+  }
+
+  .mat-mdc-raised-button:not(:disabled) {
+    background-color: gold;
+  }
+
+
+
+
+
+  @media (max-width: 650px) {
+    .user-details-form {
+      grid-template-columns: 1fr;
+      grid-row-gap: 10px;
+    }
+  }
