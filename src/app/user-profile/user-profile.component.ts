@@ -35,6 +35,9 @@ export class UserProfileComponent implements OnInit {
       this.getUser();
     }
 
+    /**
+    * Gets the user info and favorite movies from the API.
+    */
     getUser(): void {
       this.fetchApiData.getOneUser().subscribe((user: any) => {
         this.user = user;
@@ -49,6 +52,9 @@ export class UserProfileComponent implements OnInit {
       });
     }
 
+    /**
+   *Calls the API to update the user info.
+   */
     editUser(): void {
       this.fetchApiData.editUser(this.userData).subscribe((result) => {
         console.log('User:', result);
@@ -71,6 +77,9 @@ export class UserProfileComponent implements OnInit {
       }, 1000); // added 1ms delay as code async
     }
 
+    /**
+    *Calls the API to delete the user.
+    */
     deleteUser(): void {
       this.fetchApiData.deleteUser().subscribe((result) => {
         localStorage.clear();

@@ -26,6 +26,9 @@ export class MovieCardComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
+  /**
+   * Calls the get movies method on the API.
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -34,12 +37,18 @@ export class MovieCardComponent implements OnInit {
     
   }
 
-  // fave movie logic starts here //
-
+  /**
+  * Calls the check favorite movie method on the API.
+  * @param id The movie ID
+  */
     isFavorite(MovieID: string): boolean {
     return this.favoriteMovies.includes(MovieID);
   }
 
+  /**
+   * Calls the add favorite movie method on the API.
+   * @param id The movie ID
+   */
   addToFavorites(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe((result) => {
       console.log(result);
@@ -50,6 +59,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Calls the delete favorite movie method on the API.
+   * @param id The movie ID
+   */
   removeFromFavorites(id: string): void {
     this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
       console.log(result);
@@ -60,6 +73,9 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+/** 
+ * calls getOneSure function to populate favoriteMovies array
+*/
   getFavoriteMovies(): void {
     this.fetchApiData.getOneUser().subscribe((user: any) => {
     this.favoriteMovies = user.FaveMovies;
@@ -67,8 +83,10 @@ export class MovieCardComponent implements OnInit {
     }
 
 
- //Movie Details dialog modal displaying the movie title and description//
-   
+/**
+   * Opens the movie description dialog.
+   * @param description The text to show on the dialog
+   */   
  openSummary(title: string, description: string): void {
   this.dialog.open(MovieDetailsComponent, {
     data: {
@@ -79,8 +97,11 @@ export class MovieCardComponent implements OnInit {
   });
 }
 
-//genre component 
-
+/**
+   * Opens the genre dialog.
+   * @param name The genre's name to show on the dialog (title)
+   * @param description The genre's description to show on the dialog
+   */
 openGenre(name: string, description: string): void {
   this.dialog.open(GenreDetailsComponent, {
     data: {
@@ -91,8 +112,11 @@ openGenre(name: string, description: string): void {
   });
 }
 
-// director component //
-
+/**
+   * Opens the director dialog.
+   * @param name The director's name to show on the dialog (title)
+   * @param bio The director's biography to show on the dialog
+  */
 openDirector(name: string, bio: string, birthday: string): void {
   this.dialog.open(DirectorDetailsComponent, {
     data: {

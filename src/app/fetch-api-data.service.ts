@@ -9,20 +9,33 @@ const apiUrl = 'https://jackoc-myflix.onrender.com/';
 @Injectable({ // A decorator is a function that augments a piece of code—usually another function or a class.//
   providedIn: 'root'
 })
+
+/**
+ *Creates a new service to load the data from the API.
+ */
 export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
   }
- // Making the api call for the user registration endpoint
-  public userRegistration(userDetails: any): Observable<any> {
+
+  /**
+  *  Makes the API call for the user registration endpoint.
+  * @param userDetails The user credentials
+  * @returns http POST request
+  */  
+ public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
     );
   }
 
-  // making the api call for the user log in endpoint
+   /**
+  *  Makes the API call for the user login endpoint.
+  * @param userDetails the user credentials
+  * @returns http POST request
+  */
   public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
@@ -30,8 +43,11 @@ export class FetchApiDataService {
     );
   }
 
-  // Making the api call for the get all movies endpoint
-  getAllMovies(): Observable<any> {
+ /**
+  *  Makes the API call for the get all Movies endpoint. 
+  * @returns http GET request
+  */  
+ getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {headers: new HttpHeaders(
       {
@@ -42,8 +58,12 @@ export class FetchApiDataService {
     );
   }
 
-  // Making the api call for get one movie endpoint
-  getOneMovie(title: string): Observable<any> {
+ /**
+  *  Makes the API call for the get one movie endpoint.
+  * @param title (the movie title)
+  * @returns http GET request
+  */
+   getOneMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/' + title, {headers: new HttpHeaders(
       {
@@ -54,6 +74,11 @@ export class FetchApiDataService {
     );
   }
 
+   /**
+  *  Makes the API call for the get director endpoint.
+  * @param directorName
+  * @returns http GET request
+  */
   getOneDirector(directorName: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/director/' + directorName, {headers: new HttpHeaders(
@@ -65,7 +90,11 @@ export class FetchApiDataService {
     );
   }
   
-  // Making the api call for the get one genre endpoint
+ /**
+  *  Makes the API call for the get genre endpoint.
+  * @param genreName
+  * @returns http GET request
+  */
   getOneGenre(genreName: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies/genre/' + genreName, {headers: new HttpHeaders(
@@ -77,7 +106,10 @@ export class FetchApiDataService {
     );
   }
   
-  //Making the api call for get one user
+   /**
+  *  Makes the API call for the get user endpoint.
+  * @returns http GET request
+  */
   getOneUser(): Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
@@ -92,7 +124,11 @@ export class FetchApiDataService {
   }
   
 
-  // Making the api call for the edit user endpoint
+   /**
+  *  Makes the API call for the update user endpoint.
+  * @param updatedUser
+  * @returns http PUT request
+  */
   editUser(updatedUser: any): Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
@@ -106,8 +142,11 @@ export class FetchApiDataService {
   );
 }
 
-  // Making the api call for the delete user endpoint
-  deleteUser(): Observable<any> {
+ /**
+  *  Makes the API call for the delete user endpoint.
+  * @returns http DELETE request
+  */
+   deleteUser(): Observable<any> {
     const userid = localStorage.getItem('userid');
     const token = localStorage.getItem('token');
     return this.http.delete(apiUrl + 'users/' + userid, { headers: new HttpHeaders(
@@ -120,8 +159,12 @@ export class FetchApiDataService {
     );
   }
 
-  // Making the api call for the add a movie to favourite Movies endpoint
-  addFavoriteMovie(MovieID: string): Observable<any> {
+ /**
+  *  Makes the API call for the add to favourites endpoint.
+  * @param MovieID
+  * @returns http POST request
+  */
+   addFavoriteMovie(MovieID: string): Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
     return this.http.post(apiUrl + 'users/' + username + '/movies/' + MovieID, {}, {headers: new HttpHeaders(
@@ -134,8 +177,12 @@ export class FetchApiDataService {
     );
     }
 
-  // Making the api call for deleting a movie from the favorite movies endpoint
-  removeFavoriteMovie(MovieID: string): Observable<any> {
+ /**
+  *  Makes the API call for the remove from favourites endpoint.
+  * @param MovieID
+  * @returns http DELETE request
+  */
+   removeFavoriteMovie(MovieID: string): Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
     
