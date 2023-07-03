@@ -1,3 +1,19 @@
+## Project description
+Client-side of a single-page, responsive movie application called myFlix which includes several views (built using Angular) and handles data through the (previously defined) REST API endpoint.
+
+## How to get the project running
+[myFlix-client] (https://jackolicode.github.io/myFlix-Angular-client/)
+
+## Project dependencies
+JavaScript version: ES6
+Angular: v16.0.5
+Angular Material: v16.0.5
+
+
+## Which API the project uses
+[myFlix] (https://jackoc-myflix.onrender.com/)
+
+
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
